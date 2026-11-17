@@ -131,3 +131,5 @@ Consulta `docs/GUIA_ENTREGA.md` y `docs/REGISTRO_EVIDENCIAS.md` para saber qué 
 - Documentación oficial de Docker: https://docs.docker.com/
 - Documentación oficial de Git: https://git-scm.com/doc
 - Documentación de GitHub: https://docs.github.com/
+
+Validacion adicional: proyecto publicado en GitHub para control de versiones y colaboracion.
