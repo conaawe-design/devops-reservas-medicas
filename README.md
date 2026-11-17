@@ -131,3 +131,17 @@ Consulta `docs/GUIA_ENTREGA.md` y `docs/REGISTRO_EVIDENCIAS.md` para saber qué 
 - Documentación oficial de Docker: https://docs.docker.com/
 - Documentación oficial de Git: https://git-scm.com/doc
 - Documentación de GitHub: https://docs.github.com/
+
+## Validación del entorno DevOps
+
+La aplicación fue ejecutada localmente mediante Docker Compose.
+
+Se verificó:
+- Construcción exitosa de la imagen Docker.
+- Ejecución del contenedor Nginx.
+- Disponibilidad de la aplicación en http://localhost:8080.
+- Consulta de logs del servicio.
+- Monitoreo de CPU y memoria.
+- Detención controlada del contenedor.
+
+Este proyecto es una simulación académica y no almacena datos reales de pacientes.
