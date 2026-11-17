@@ -133,3 +133,19 @@ Consulta `docs/GUIA_ENTREGA.md` y `docs/REGISTRO_EVIDENCIAS.md` para saber qué 
 - Documentación de GitHub: https://docs.github.com/
 
 Validacion adicional: proyecto publicado en GitHub para control de versiones y colaboracion.
+## Validación del entorno DevOps
+
+Se realizaron pruebas locales utilizando Docker Compose para verificar
+la construcción, ejecución y monitoreo de la aplicación.
+
+### Pruebas realizadas
+
+- Construcción de imagen mediante `docker compose up -d --build`.
+- Verificación del contenedor mediante `docker compose ps`.
+- Acceso a la aplicación desde `http://localhost:8080`.
+- Revisión de registros mediante `docker compose logs`.
+- Monitoreo de recursos mediante `docker stats --no-stream`.
+- Detención controlada mediante `docker compose down`.
+
+**Nota:** La aplicación es una simulación académica y no almacena
+reservas ni información real de pacientes.
