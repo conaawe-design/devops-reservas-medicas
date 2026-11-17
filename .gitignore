@@ -1,0 +1,23 @@
+# Configuración privada: nunca publicar secretos
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Archivos locales/temporales
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+__pycache__/
+node_modules/
+
+# Capturas locales de uso personal (se insertan en el informe, no en el repositorio)
+evidencias-locales/
+
+# Archivos de presentación/exportación
+*.tmp

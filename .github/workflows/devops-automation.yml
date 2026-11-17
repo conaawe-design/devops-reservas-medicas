@@ -1,0 +1,40 @@
+# Automatización COMPLEMENTARIA (no obligatoria en el enunciado).
+# Valida la imagen Docker y la respuesta HTTP, sin desplegar a Internet.
+name: Validacion DevOps local
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate-static-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar código del repositorio
+        uses: actions/checkout@v4
+
+      - name: Verificar archivos exigidos
+        shell: bash
+        run: |
+          set -euo pipefail
+          for file in src/index.html src/styles.css Dockerfile docker-compose.yml .gitignore .env.example README.md; do
+            test -s "$file" || { echo "Falta o está vacío: $file"; exit 1; }
+          done
+
+      - name: Construir imagen Nginx
+        run: docker build -t clinica-vida-ci:validacion .
+
+      - name: Comprobar servicio HTTP
+        shell: bash
+        run: |
+          set -euo pipefail
+          docker run --rm -d --name clinica-vida-ci -p 127.0.0.1:18080:80 clinica-vida-ci:validacion
+          trap 'docker logs clinica-vida-ci || true; docker stop clinica-vida-ci || true' EXIT
+          curl --fail --silent --show-error --retry 8 --retry-connrefused --retry-delay 1 http://127.0.0.1:18080/ -o pagina.html
+          grep -q 'Clínica Vida' pagina.html
+          grep -q 'booking-form' pagina.html

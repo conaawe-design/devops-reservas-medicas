@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="es-CL">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Simulador académico de reserva de horas médicas para demostrar prácticas DevOps con Docker y Nginx." />
+    <meta name="theme-color" content="#103b4f" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'" />
+    <title>Clínica Vida | Simulación de reservas médicas</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+
+    <header class="site-header">
+      <div class="container topbar">
+        <a class="brand" href="#inicio" aria-label="Clínica Vida, volver al inicio">
+          <span class="brand-mark" aria-hidden="true">+</span>
+          <span class="brand-text">Clínica <strong>Vida</strong><small>PROYECTO ACADÉMICO</small></span>
+        </a>
+        <nav class="site-nav" aria-label="Navegación principal">
+          <a href="#inicio">Inicio</a>
+          <a href="#reserva">Reservar hora</a>
+          <a href="#informacion">Información</a>
+        </nav>
+        <span class="header-tag"><span class="status-dot" aria-hidden="true"></span> Demo local</span>
+      </div>
+    </header>
+
+    <main id="contenido">
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> EXPERIENCIA DIGITAL EN SALUD</p>
+            <h1 id="hero-title">Tu salud merece una atención <span>más simple.</span></h1>
+            <p class="hero-description">Explora una experiencia de reserva de horas médicas clara y accesible. Este sitio es una <strong>simulación académica</strong>: no gestiona citas reales.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#reserva">Simular una reserva <span aria-hidden="true">↗</span></a>
+              <a class="button button-outline" href="#informacion">Conocer el servicio</a>
+            </div>
+            <div class="hero-trust" aria-label="Características del entorno">
+              <span>✓ Sin datos personales</span>
+              <span>✓ Ejecución local</span>
+              <span>✓ Sin base de datos</span>
+            </div>
+          </div>
+
+          <aside class="hero-panel" aria-label="Información de la simulación">
+            <div class="panel-illustration" aria-hidden="true">
+              <div class="illustration-orbit orbit-one"></div>
+              <div class="illustration-orbit orbit-two"></div>
+              <div class="illustration-card">
+                <div class="illustration-symbol">+</div>
+                <div class="illustration-bars"><i></i><i></i><i></i></div>
+              </div>
+              <span class="illustration-pill pill-top">Atención cercana</span>
+              <span class="illustration-pill pill-bottom">Agenda demostrativa</span>
+            </div>
+            <div class="panel-bottom">
+              <div>
+                <p class="panel-label">ESTADO DEL SERVICIO</p>
+                <p class="panel-title">Demostración disponible</p>
+                <p class="panel-subtitle">Sitio estático servido localmente con Nginx.</p>
+              </div>
+              <span class="panel-check" aria-hidden="true">✓</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="features" id="informacion" aria-labelledby="features-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">INFORMACIÓN GENERAL</p>
+            <h2 id="features-title">Una experiencia pensada para cada paso</h2>
+            <p>Información referencial para mostrar cómo podría presentarse un portal médico digital.</p>
+          </div>
+          <div class="features-grid">
+            <article class="feature-card">
+              <span class="feature-icon" aria-hidden="true">✚</span>
+              <h3>Especialidades</h3>
+              <p>Medicina general, pediatría y kinesiología disponibles como opciones de demostración.</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-icon" aria-hidden="true">◷</span>
+              <h3>Horario referencial</h3>
+              <p>Lunes a viernes, de 08:00 a 18:00. La selección de horarios no refleja disponibilidad real.</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-icon" aria-hidden="true">▣</span>
+              <h3>Entorno controlado</h3>
+              <p>Servicio sin backend ni almacenamiento, ejecutado en un contenedor Docker mediante Nginx.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="booking-section" id="reserva" aria-labelledby="booking-title">
+        <div class="container booking-grid">
+          <div class="booking-aside">
+            <p class="eyebrow">RESERVA DE HORAS</p>
+            <h2 id="booking-title">Simula tu próxima atención médica.</h2>
+            <p>Completa los campos con opciones de prueba. Al confirmar, solo verás un resumen en tu navegador.</p>
+            <div class="steps" aria-label="Pasos del simulador">
+              <div class="step"><span>01</span><div><strong>Elige una especialidad</strong><p>Selecciona el tipo de atención.</p></div></div>
+              <div class="step"><span>02</span><div><strong>Selecciona fecha y hora</strong><p>Utiliza una fecha de lunes a viernes.</p></div></div>
+              <div class="step"><span>03</span><div><strong>Visualiza la simulación</strong><p>No se envía ni registra ninguna reserva.</p></div></div>
+            </div>
+          </div>
+
+          <div class="booking-card">
+            <div class="booking-card-heading">
+              <div><p class="card-kicker">FORMULARIO DEMOSTRATIVO</p><h3>Nueva solicitud de hora</h3></div>
+              <span class="card-symbol" aria-hidden="true">✚</span>
+            </div>
+            <form id="booking-form" autocomplete="off">
+              <div class="field">
+                <label for="specialty">Especialidad médica <span aria-hidden="true">*</span></label>
+                <select id="specialty" name="specialty" required>
+                  <option value="">Selecciona una especialidad</option>
+                  <option value="Medicina general">Medicina general</option>
+                  <option value="Pediatría">Pediatría</option>
+                  <option value="Kinesiología">Kinesiología</option>
+                </select>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="appointment-date">Fecha de atención <span aria-hidden="true">*</span></label>
+                  <input id="appointment-date" name="appointment-date" type="date" required />
+                </div>
+                <div class="field">
+                  <label for="appointment-time">Horario <span aria-hidden="true">*</span></label>
+                  <select id="appointment-time" name="appointment-time" required>
+                    <option value="">Selecciona un horario</option>
+                    <option value="08:00">08:00</option>
+                    <option value="09:30">09:30</option>
+                    <option value="11:00">11:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="15:30">15:30</option>
+                    <option value="17:00">17:00</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <label for="modality">Modalidad <span aria-hidden="true">*</span></label>
+                <select id="modality" name="modality" required>
+                  <option value="">Selecciona una modalidad</option>
+                  <option value="Presencial">Presencial (demostración)</option>
+                  <option value="Telemedicina">Telemedicina (demostración)</option>
+                </select>
+              </div>
+              <p class="form-note">No ingreses nombres, RUT, correos ni información clínica real. Este formulario no procesa datos de pacientes.</p>
+              <p id="form-error" class="form-error" role="alert" hidden></p>
+              <button class="button button-primary submit-button" type="submit">Confirmar simulación <span aria-hidden="true">→</span></button>
+            </form>
+            <div id="booking-result" class="booking-result" role="status" aria-live="polite" hidden>
+              <div class="result-icon" aria-hidden="true">✓</div>
+              <div>
+                <h4>Simulación realizada</h4>
+                <p id="booking-summary"></p>
+                <p class="result-note"><strong>Importante:</strong> no se generó ni almacenó una reserva real.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-row">
+        <div class="footer-brand"><span class="footer-mark" aria-hidden="true">+</span><span><strong>Clínica Vida</strong><small>Simulación educativa · DevOps Unidad 1</small></span></div>
+        <p>Proyecto ficticio para aprendizaje. Sin atención, reservas ni datos reales.</p>
+      </div>
+    </footer>
+  </body>
+</html>
